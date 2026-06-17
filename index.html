@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On The Fly Cleaning LLC</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+        url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.logo{
+    display:block;
+    margin:0 auto 20px;
+    max-width:700px;
+    width:100%;
+}
+
+.page-title{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:40px;
+    font-weight:700;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.section-title{
+    color:#f8a81b;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    font-size:22px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:6px;
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+textarea{
+    min-height:180px;
+}
+
+.radio-group label,
+.checkbox-group label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+input[type=radio],
+input[type=checkbox]{
+    width:24px;
+    height:24px;
+}
+
+.file-upload{
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:6px;
+    margin-bottom:20px;
+}
+
+.submit-container{
+    text-align:center;
+    margin-top:40px;
+}
+
+.submit-btn{
+    background:#f8a81b;
+    color:black;
+    border:none;
+    padding:25px 80px;
+    border-radius:10px;
+    font-size:32px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+.footer-note{
+    text-align:center;
+    margin-top:20px;
+    opacity:.8;
+}
+
+@media(max-width:900px){
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .page-title{
+        font-size:32px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    label{
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="JoseForm1.png" class="logo" alt="On The Fly Cleaning LLC">
+
+    <h1 class="page-title">
+        Cleaning Service Quote Request
+    </h1>
+
+    <form id="quoteForm">
+
+        <div class="form-grid">
+
+            <!-- LEFT COLUMN -->
+
+            <div>
+
+                <h2 class="section-title">
+                    1. Business Name & Service Address
+                </h2>
+
+                <label>Business Name *</label>
+                <input type="text" name="business_name" required>
+
+                <label>Service Address *</label>
+                <input type="text" name="service_address" required>
+
+                <h2 class="section-title">
+                    2. Cleaning Frequency *
+                </h2>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input type="radio" name="frequency">
+                        Deep Clean
+                    </label>
+
+                    <label>
+                        <input type="radio" name="frequency">
+                        One-Time Cleaning
+                    </label>
+
+                    <label>
+                        <input type="radio" name="frequency">
+                        Weekly
+                    </label>
+
+                    <label>
+                        <input type="radio" name="frequency">
+                        Bi-Weekly
+                    </label>
+
+                    <label>
+                        <input type="radio" name="frequency">
+                        Monthly
+                    </label>
+
+
+                </div>
+
+                <h2 class="section-title">
+                    3. Scope of Work
+                </h2>
+
+                <p style="margin-bottom:20px;">
+                    Please upload photos and/or describe the cleaning services needed.
+                </p>
+
+                <div class="file-upload">
+                    <input type="file" multiple>
+                </div>
+
+                <label>Description</label>
+
+                <textarea
+                placeholder="Describe the cleaning services needed..."></textarea>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div>
+
+                <h2 class="section-title">
+                    4. Contact Information
+                </h2>
+
+                <label>Contact Name *</label>
+                <input type="text" name="contact_name" required>
+
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" required>
+
+                <label>Email Address *</label>
+                <input type="email" name="email" required>
+
+                <h2 class="section-title">
+                    5. Preferred Contact Method *
+                </h2>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox">
+                        Phone Call
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        Text Message
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        Email
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="submit-container">
+
+            <button class="submit-btn">
+                REQUEST MY FREE QUOTE
+            </button>
+
+            <div class="footer-note">
+                🔒 Your information is safe and will never be shared.
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
